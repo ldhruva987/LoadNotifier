@@ -10,7 +10,7 @@ const concurrentLimiter = (req, res, next) => {
   console.log(`${ip}, ${connections}`);
  //checking the rule
   if (connections >= config.maxConcurrentRequests) {
-    return res.status(429).send({ message: "Too many concurrent requests from this IP" });
+    return res.status(429).send({ message: config.concurrentErrorMessage});
   }
 
   map.set(ip, connections + 1);

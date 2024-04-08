@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "aa8ffa42-bce7-404c-92ae-d2294f770afc",
+		"name": "Surebright",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32610536",
+		"_collection_link": "https://speeding-escape-228227-1.postman.co/workspace/New-Team-Workspace~cc6c65aa-e674-4433-959f-641672ec7f78/collection/32610536-aa8ffa42-bce7-404c-92ae-d2294f770afc?action=share&source=collection_link&creator=32610536"
+	},
+	"item": [
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRecord",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Samsung Galaxy S22\",\r\n    \"quantity\": 10,\r\n    \"price\": 1500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/products/661283e10bd4260b1d501bb5"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProductById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 950\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/products/661283e10bd4260b1d501bb5"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProductbyID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/products/6612545e48fea5b299c79c12/"
+			},
+			"response": []
+		}
+	]
+}
