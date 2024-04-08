@@ -1,5 +1,6 @@
 {
     "rateLimitWindowMs":  60000,
-    "maxRequestsPerWindow": 3,
+    "maxRequestsPerWindow": 10,
+    "maxConcurrentRequests": 2, 
     "errorMessage": "Too many requests from this IP, please try again later"
   }
