@@ -12,4 +12,4 @@ Steps to intitaiate & test application:
 
 4. Import the Surebright.postman_collection.json to postman and check the Requests per IP adress for specific time window  
 
-5. Initiate APITEST application for concurrent requests per IP adress limi rule  ,only after initiatin Load Notifier application
+5. Initiate APITEST application(https://github.com/ldhruva987/concurrentApiTest) for concurrent requests per IP adress limi rule  ,only after initiatin Load Notifier application
