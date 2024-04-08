@@ -2,12 +2,28 @@ const mongoose = require("mongoose");
 const Product = require("./models/product.js");
 const productRoute = require("./routes/productRoute.js");
 const express = require("express");
+const rateLimit = require('express-rate-limit');
 const app = express();
-//Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+const fs = require('fs');
+
+// const limiter = require('./ratelimiter.js');
 
 const port = process.env.PORT || 3000;
+
+//
+const config = JSON.parse(fs.readFileSync('config.json'));
+
+const limiter = rateLimit({
+  windowMs: config.rateLimitWindowMs,
+  max: config.maxRequestsPerWindow,
+  message: config.errorMessage
+});
+
+//Middleware
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(limiter);
 
 //Routes
 app.use("/api/products", productRoute);
