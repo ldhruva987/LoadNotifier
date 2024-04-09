@@ -6,12 +6,7 @@ const limiter = require('./utilities/rateLimiter.js');
 const concurrentLimiter = require('./utilities/concurrentRateLimiter.js');
 const app = express();
 
-
-// const limiter = require('./ratelimiter.js');
-
 const port = process.env.PORT || 3000;
-
-//for request limiter 
 
 //Middleware
 

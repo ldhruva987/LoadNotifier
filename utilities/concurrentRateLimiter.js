@@ -1,4 +1,5 @@
 const fs = require('fs');
+const logger = require('../models/logger.js');
  
  // It will track  active connections per IP
 const config = JSON.parse(fs.readFileSync('config.json'));
@@ -8,8 +9,14 @@ const concurrentLimiter = (req, res, next) => {
   const ip = req.ip;
   const connections = map.get(ip) || 0;
   console.log(`${ip}, ${connections}`);
+  logger.info('Incoming request', {
+    ip,
+    method: req.method,
+    connections,
+  });
  //checking the rule
   if (connections >= config.maxConcurrentRequests) {
+    logger.info({message: config.concurrentErrorMessage});
     return res.status(429).send({ message: config.concurrentErrorMessage});
   }
 
